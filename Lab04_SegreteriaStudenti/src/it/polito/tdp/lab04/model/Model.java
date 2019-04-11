@@ -44,12 +44,13 @@ public class Model {									// NON FACCIO LE OPERAZIONI SUL DB DIRRETTAMENTE QU
 			return temp;
 		}
 
-		public boolean getEIscritto(int matr, String cod) {
+		public boolean getEIscritto(int matr, Corso corso) {
+			String codtemp= corso.getCodins();
 			StudenteDAO dao=new StudenteDAO();					// DEVO RESTITUIRE UNA LIST DI CORSI 
 			List<Corso> corsi=dao.getCorsi(matr);
 			boolean trovato=false;
 			for(Corso c:corsi)
-				if(c.getCodins().equals(cod))
+				if(c.getCodins().equals(codtemp))
 					trovato=true;
 			return trovato;
 		}

@@ -97,7 +97,7 @@ public class SegreteriaStudentiController {
     				TxtResult.appendText("Errore. Non esistono studenti con la matricola indicata.\n");
     				return;
     			}
-    			if(model.getEIscritto(matricola, nomec)) {
+    			if(model.getEIscritto(matricola, corso)) {
     				TxtResult.appendText("Studente già iscritto a questo corso.\n");
 
     			}else {
@@ -157,7 +157,7 @@ public class SegreteriaStudentiController {
         		TxtResult.appendText("Errore. Non esistono studenti con la matricola indicata.\n");
         		return;
         	}
-        	if(model.getEIscritto(matr, corso.getCodins())==true)
+        	if(model.getEIscritto(matr, corso)==true)
     			TxtResult.appendText("Studente già iscritto a questo corso.\n");
     		else {
     			TxtResult.appendText("Studente non iscritto a questo corso.\n");
